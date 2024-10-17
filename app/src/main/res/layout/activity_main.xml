@@ -1,19 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#000000">
+
+    <!-- Sección para buscar un post específico -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/edit_text_post_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="ID del post"
+            android:inputType="number"
+            android:padding="8dp"
+            android:background="#878787"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/button_fetch_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar"
+            android:backgroundTint="#FCA311"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Resultados del post consultado -->
+    <TextView
+        android:id="@+id/text_view_post_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID:"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="16dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/text_view_post_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Título:"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/text_view_post_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cuerpo:"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"/>
+
+    <!-- Sección para actualizar un post -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#14213D"
+        android:padding="12dp"
+        android:elevation="2dp"
+        android:layout_marginTop="16dp">
+
+        <EditText
+            android:id="@+id/edit_text_update_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID del post a actualizar"
+            android:background="#878787"/>
+
+        <EditText
+            android:id="@+id/edit_text_update_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nuevo título"
+            android:background="#878787"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/edit_text_update_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nuevo cuerpo"
+            android:background="#878787"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/button_update_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actualizar Post"
+            android:backgroundTint="#FCA311"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</LinearLayout>
